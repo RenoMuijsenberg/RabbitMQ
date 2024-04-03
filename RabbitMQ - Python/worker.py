@@ -10,6 +10,7 @@ print(' [*] Waiting for messages. To exit press CTRL+C')
 
 def callback(ch, method, properties, body):
     print(f" [x] Received {body.decode()}")
+
     time.sleep(1)
     print(" [x] Done")
     ch.basic_ack(delivery_tag=method.delivery_tag)
