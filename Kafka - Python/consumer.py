@@ -1,7 +1,7 @@
 from confluent_kafka import Consumer
 
 c = Consumer({
-    'bootstrap.servers': 'localhost:9092',
+    'bootstrap.servers': 'host.docker.internal:9092',
     'group.id': '1',
     'auto.offset.reset': 'earliest'
 })
@@ -18,6 +18,6 @@ while True:
         print("Consumer error: {}".format(msg.error()))
         continue
 
-    print('Received message: {}'.format(msg.decode('utf-8')))
+    print('Received message: {}'.format(msg.value().decode('utf-8')))
 
 c.close()

@@ -1,7 +1,7 @@
 from confluent_kafka import Producer
 
 p = Producer({
-    'bootstrap.servers': 'localhost:9092',
+    'bootstrap.servers': 'host.docker.internal:9092',
 })
 
 
